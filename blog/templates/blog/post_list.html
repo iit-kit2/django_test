@@ -5,5 +5,13 @@
 	<body>
 		<strong>I am Naruto Uzumaki.</strong><br>
 		<em>I am Itachi Uchiha.</em>
+		<br><br>
+		<div>
+		{% for post in posts %}
+			<p>Published : {{post.published_date}}</p>
+			<h3>{{post.title}}</h3>
+			<p>{{post.text}}</p>
+		{% endfor%}
+		</div>
 	</body>
 </html>
