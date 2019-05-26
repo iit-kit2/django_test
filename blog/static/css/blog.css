@@ -59,3 +59,27 @@ h1, h2, h3, h4 {
 .post h2 a, .post h2 a:visited {
     color: #EB8264;
 }
+
+.button {
+	font-family : 'njnaruto';
+	background-color: orange;
+	border : none;
+	color : white;
+	padding : 7px 15px;
+	font-size : 16px;
+	cursor : pointer;
+	border-radius : 15px;
+	transition-duration : 0.4s;
+	box-shadow : 0 9px #999;
+}
+
+.button:hover {
+	background-color : orange;
+}
+
+.button:active {
+	box-shadow : 0 5px #666;
+	transform : translateY(4px);
+}
+
+a:link{color:white;}a:visited{color:white;}a:hover{color:white;}a:active{color:white;}

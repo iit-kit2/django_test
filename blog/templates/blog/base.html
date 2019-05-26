@@ -1,0 +1,28 @@
+<html>
+    <head>
+    	<title>!!Naru-verse!!</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type = 'text/css' />
+    	<link rel="stylesheet" href="{% static 'css/blog.css' %}" type= 'text/css' />
+	
+    </head>
+    <body>
+        <div class = "page-header">
+            <h1><a href="/">Naru-Verse</a></h1>
+        </div>
+		<br>
+		<div class="content container">
+    		<div class="row">
+        		
+            		{% block content %}
+			{% endblock %}
+        		
+    		</div>
+		</div>
+		<center>
+			<a href = "/"><button class = "button">home.</button></a>
+			<a href = "mailto:nick.kittu@live.in"><button class = "button">feedback.</button></a>
+		</center>
+		<br><br>  
+    </body>
+</html>

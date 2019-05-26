@@ -1,31 +1,34 @@
-<html>
-    <head>
-        <title>!!Naru-verse!!</title>
-	{% load staticfiles %}
-	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type = 'text/css' />
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}" type= 'text/css' />
-    </head>
-    <body>
-        <div class = "page-header">
-            <h1><a href="/">Naru-Verse</a></h1>
-        </div>
-	<br>
-	<div class="content container">
-    		<div class="row">
-        		<div class="col-md-8">
-            		{% for post in posts %}
-               			 <div class="post">
-                    			<div class="date">
-                        		<p>published: {{ post.published_date }}</p>
-                    			</div>
-                    			<h2><a href="">{{ post.title }}</a></h2>
-                    			<p>{{ post.text|linebreaksbr }}</p>
-                		</div>
-           	 		{% endfor %}
-        		</div>
-    		</div>
+
+{% extends 'blog/base.html' %}
+{% block content %}
+<div id = "scr_box" class="col-md-8">
+	{% for post in posts %}
+	<div class="post">
+		<div class="date">
+			<p>published: {{ post.published_date }}</p>
+		</div>
+		<h2><a href="">{{ post.title }}</a></h2>
+		<p>{{ post.text|linebreaksbr }}</p>
+	</div>
+	{% endfor %}
+
+	<div class = "pagination">
+		<span class = "step-links">
+			{% if posts.has_previous %}
+				<a href = "?page={{ posts.previous_page_number }}">
+						<button class = "button">previous</button>
+				</a>
+			{% endif %}
+			<span class = "current">
+				Page {{ posts.number }} of {{ posts.paginator.num_pages }}
+			</span>
+			{% if posts.has_next %}
+				<a href = "?page={{ posts.next_page_number }}">
+						<button class = "button">next</button>
+				</a>
+			{% endif %}
+		</span>
 	</div>
 
-        
-    </body>
-</html>
+</div>
+{% endblock %}
